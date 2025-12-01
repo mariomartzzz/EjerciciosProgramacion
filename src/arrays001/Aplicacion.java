@@ -10,6 +10,8 @@ public class Aplicacion {
 		do {
 			System.out.println("Escoge una opción:");
 			System.out.println("1) Generar cien números aleatorios.");
+			System.out.println("2) Imprimir array predefinido.");
+			System.out.println("3) Imprimir lista de personas.");
 			System.out.println("0) Salir.");
 			opcion = s.nextInt();
 			switch (opcion) {
@@ -19,6 +21,12 @@ public class Aplicacion {
 			case 1:
 				for(int i=0;i<100;i++)
 					System.out.println(Ejemplos.generarNumeroAleatorio(3, 9));
+				break;
+			case 2:
+				Ejemplos.imprimirArrayEnterosPredefinido();
+				break;
+			case 3:
+				Ejemplos.imprimirArrayCuatroPersonas();
 				break;
 			default:
 				System.out.println("Opción incorrecta.");
