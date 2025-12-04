@@ -93,11 +93,58 @@ public abstract class Ejemplos {
 	/**
 	 * Imprimir seis números aleatorios entre el 1 y el 49 no repetidos.
 	 */
-	public static void imprimirApuestaLoteria() {}
+
+	public static void imprimirApuestaLoteria() {
+		
+		int arrayLoteria[]=new int[6];
+		String cadena="{";
+		for(int i=0;i<arrayLoteria.length;i++) {
+			int a=generarNumeroAleatorio(1,50);
+			
+			if(!cadena.contains(String.valueOf(a))) {
+			arrayLoteria[i]=a;
+			cadena+=arrayLoteria[i];}
+			else {
+				System.out.println("El número repetido es: "+a);
+				i--;}
+			if(i<5)
+				cadena+=" ";
+		}
+		cadena+="}";
+		System.out.println(cadena);
+	}
 	
 	public static int[] ordenarArrayEnteros(int arrayEnteros[]) {
 		int arrayOrdenado[]=new int[arrayEnteros.length];
 		return arrayOrdenado;
 	}
-
+	public static boolean estaOrdenadoAscendentemente(int array[]) {
+		boolean estaOrdenado=true;
+		for (int i=0; i<array.length-1;i++) {
+			if(!esMenor(array[i],array[i+1]))
+			estaOrdenado=false;
+			System.out.print("Esta ordenado ascendentemente.");
+		}
+		return estaOrdenado;
+	}
+	
+	public static boolean estaOrdenadoDescendentemente(int array[]) {
+		boolean estaOrdenado=true;
+		for (int i=0; i<array.length-1;i++) {
+			if(esMenor(array[i],array[i+1]))
+			estaOrdenado=false;
+			System.out.print("Esta ordenado descendentemente.");
+		}
+		return estaOrdenado;
+	
+	}
+	public static boolean esMenor(int a, int b) {
+		boolean esMenor=true;
+		if(a>b)
+			return false;
+		
+		return esMenor;
+		
+		
+	}
 }
