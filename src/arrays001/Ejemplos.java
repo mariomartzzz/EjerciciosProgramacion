@@ -125,6 +125,10 @@ public abstract class Ejemplos {
 			estaOrdenado=false;
 			System.out.print("Esta ordenado ascendentemente.");
 		}
+		if(estaOrdenado==true)
+			System.out.print("Esta ordenado ascendentemente.");
+		else
+			System.out.print("No esta ordenado descendentemente.");
 		return estaOrdenado;
 	}
 	
@@ -135,6 +139,10 @@ public abstract class Ejemplos {
 			estaOrdenado=false;
 			System.out.print("Esta ordenado descendentemente.");
 		}
+		if(estaOrdenado==true)
+			System.out.print("Esta ordenado descendentemente.");
+		else
+			System.out.print("No esta ordenado descendentemente.");
 		return estaOrdenado;
 	
 	}
