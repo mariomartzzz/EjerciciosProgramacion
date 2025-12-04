@@ -9,7 +9,8 @@ public class Aplicacion {
 		int opcion = -1;
 		int array1[]={7,8,4,1,2};
 		int array2[]= {1,2,4,7,8};
-		System.out.println(Ejemplos.estaOrdenadoAscendentemente(array2));
+		int array3[]= {5,4,3,2,-1};
+		System.out.println(Ejemplos.estaOrdenadoDescendentemente(array3));
 		do {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Escoge una opción:");

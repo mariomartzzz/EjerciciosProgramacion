@@ -139,13 +139,27 @@ public abstract class Ejemplos {
 		return estaOrdenado;
 	}
 	
+	public static boolean estaOrdenadoDescendentemente(int array[]) {
+		boolean estaOrdenado=true;
+		for(int i=0;i<array.length-1;i++) {
+			imprimirTraza("Comparando array["+i+"] con array["+(i+1)+"]");
+			if(esMayor(array[i+1],array[i])) {
+				imprimirTraza(array[i]+" es menor que "+array[i+1]);
+				estaOrdenado=false;
+				break;
+			}
+		}
+		return estaOrdenado;
+	}
+	
+	
 	public static boolean esMayor(int a, int b) {
 		if(a>b)
 			return true;
 		else
 			return false;
 	}
-	
+		
 	public static int[] ordenarArrayEnteros(int arrayEnteros[]) {
 		int arrayOrdenado[]=new int[arrayEnteros.length];
 		return arrayOrdenado;
