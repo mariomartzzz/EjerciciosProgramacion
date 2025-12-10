@@ -10,6 +10,7 @@ public class Aplicacion {
 		int array1[]={7,8,4,1,2};
 		int array2[]= {1,2,4,7,8};
 		int array3[]= {5,4,3,2,-1};
+		Ejemplos.mediaElementosArray(array2);
 		Ejemplos.introducirEntero(6, array2);
 		do {
 			Scanner s = new Scanner(System.in);
@@ -30,7 +31,7 @@ public class Aplicacion {
 					System.out.println(Ejemplos.generarNumeroAleatorio(3, 9));
 				break;
 			case 2:
-				Ejemplos.imprimirArrayEnterosPredefinido();
+				Ejemplos.imprimirArrayEnterosPredefinido(array1);
 				break;
 			case 3:
 				Ejemplos.imprimirArrayCuatroPersonas();

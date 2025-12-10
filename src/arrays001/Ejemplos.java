@@ -30,17 +30,17 @@ public abstract class Ejemplos {
 	/**
 	 * Imprime un array de 4 posiciones.
 	 */
-	public static void imprimirArrayEnterosPredefinido() {
-		int arrayEnteros[] = {4,7,8,2};
+	public static void imprimirArrayEnterosPredefinido(int array[]) {
+		
 		//System.out.println(arrayEnteros[0]);//4
 		//System.out.println(arrayEnteros[3]);//2
 		//System.out.println(arrayEnteros[5]);//Dará error.
 		//arrayEnteros[0]=99;
 		//System.out.println(arrayEnteros[0]);//99
 		String cadenaImprimir="{";
-		for(int i=0;i<arrayEnteros.length;i++) {
-			cadenaImprimir+=arrayEnteros[i];
-			if(i<arrayEnteros.length-1)
+		for(int i=0;i<array.length;i++) {
+			cadenaImprimir+=array[i];
+			if(i<array.length-1)
 				cadenaImprimir+=",";
 		}
 		cadenaImprimir+="}";
@@ -209,17 +209,38 @@ public abstract class Ejemplos {
 			System.out.println("[TRAZA] "+mensaje);
 	}
 
+	/*
+	 * Por hacer:
+	Devolver la media aritmética de todos los elementos de un array.
+	Devolver la moda (el valor más repetido) de todos los elementos de un array.
+	Invertir un array (1,2,3 pasa a ser 3,2,1).
+	Devolver la varianza de los elementos de un array.
+	Eliminar todos los elementos repetidos de un array (1,2,2,3,4,4 pasa a ser 1,2,3,4.
+	Eliminar el elemento "i" de un array y "comprimirlo". Si al array 1,4,5,7 le quitamos el elemento 2, nos devolvería un array de 3 posiciones con el contenido 1,4,7.
+	El array "nombres" contiene una serie de nombres, y el array "edades", las edades correspondientes a esos nombres. Ordenar los dos arrays en función de la edad.
+	Hacer un módulo que imprima el menor número de monedas necesario para devolver una cantidad dada. 
+	 */
+
+	public static int sumarElementosArray(int array[]){
+		int suma=0;
+		int a;
+		String cadena="El resultado de la suma de los elementos del array es ";imprimirArrayEnterosPredefinido(array);
+	
+		for(int i=0; i<array.length;i++) {
+			suma+=array[i];			
+		}
+		cadena+=suma;
+		System.out.println(cadena);
+		return suma;
+	}
+	public static double mediaElementosArray(int array[]) {
+		double suma=sumarElementosArray(array);
+		double resultado=suma/array.length;
+		System.out.println("La media aritmética es= "+resultado);
+		return resultado;
+			
+	}
+	
+	
 }
 
-/*
- * Por hacer:
-Devolver la suma de todos los elementos de un array.
-Devolver la media aritmética de todos los elementos de un array.
-Devolver la moda (el valor más repetido) de todos los elementos de un array.
-Invertir un array (1,2,3 pasa a ser 3,2,1).
-Devolver la varianza de los elementos de un array.
-Eliminar todos los elementos repetidos de un array (1,2,2,3,4,4 pasa a ser 1,2,3,4.
-Eliminar el elemento "i" de un array y "comprimirlo". Si al array 1,4,5,7 le quitamos el elemento 2, nos devolvería un array de 3 posiciones con el contenido 1,4,7.
-El array "nombres" contiene una serie de nombres, y el array "edades", las edades correspondientes a esos nombres. Ordenar los dos arrays en función de la edad.
-Hacer un módulo que imprima el menor número de monedas necesario para devolver una cantidad dada. 
- */
