@@ -211,9 +211,7 @@ public abstract class Ejemplos {
 
 	/*
 	 * Por hacer:
-	Devolver la media aritmética de todos los elementos de un array.
 	Devolver la moda (el valor más repetido) de todos los elementos de un array.
-	Invertir un array (1,2,3 pasa a ser 3,2,1).
 	Devolver la varianza de los elementos de un array.
 	Eliminar todos los elementos repetidos de un array (1,2,2,3,4,4 pasa a ser 1,2,3,4.
 	Eliminar el elemento "i" de un array y "comprimirlo". Si al array 1,4,5,7 le quitamos el elemento 2, nos devolvería un array de 3 posiciones con el contenido 1,4,7.
@@ -241,6 +239,20 @@ public abstract class Ejemplos {
 			
 	}
 	
+	public static void invertirElementosArray(int array[]) {
+	Ejemplos.imprimirArrayEnterosPredefinido(array);
+	int a=0;
+	int b=array.length-1;
+	int arrayI[]=new int[array.length];
+		for (int i=0;i<array.length;i++) {
+			
+			arrayI[a]=array[b-i];
+					a++;
+			
+		}
+		imprimirArrayEnterosPredefinido(arrayI);
+	
+	}
 	
 }
 
