@@ -221,7 +221,6 @@ public abstract class Ejemplos {
 
 	public static int sumarElementosArray(int array[]){
 		int suma=0;
-		int a;
 		String cadena="El resultado de la suma de los elementos del array es ";imprimirArrayEnterosPredefinido(array);
 	
 		for(int i=0; i<array.length;i++) {
@@ -252,6 +251,27 @@ public abstract class Ejemplos {
 		}
 		imprimirArrayEnterosPredefinido(arrayI);
 	
+	}
+	
+	public static int modaArray(int array[]) {
+		
+		int valorActual=0;
+		int valorModa=0;
+		int nRepeticionesActual=0;
+		int nRepeticionesModa=0;
+		for(int i=0; i<array.length;i++) {
+			valorActual=array[i];
+			nRepeticionesActual=0;
+			for(int j=0;j<array.length;j++) {
+				if(valorActual==array[j])
+					nRepeticionesActual++;
+				
+			}
+			if(nRepeticionesActual>nRepeticionesModa)
+				valorModa=valorActual;
+		}
+		
+		return valorModa;
 	}
 	
 }
