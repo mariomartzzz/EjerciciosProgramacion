@@ -10,6 +10,7 @@ public class Aplicacion {
 		int array1[]={7,8,4,1,2};
 		int array2[]= {1,2,4,7,8};
 		int array3[]= {5,4,3,2,-1};
+		Ejemplos.devolverCambio(20, 40);
 		Ejemplos.invertirElementosArray(array2);
 		Ejemplos.introducirEntero(6, array2);
 		do {

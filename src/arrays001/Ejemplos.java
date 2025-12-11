@@ -274,5 +274,26 @@ public abstract class Ejemplos {
 		return valorModa;
 	}
 	
+	
+	public static void devolverCambio(double precio,double importePagado) {
+		double importeCambio=importePagado-precio;
+		double dineroEntregado=0;
+		double arrayDinero[]= {500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01};
+		double dinero;
+		double cambioRestante=importeCambio-dineroEntregado;
+		for(int a=0;a<=arrayDinero.length-1;a++) {
+			dinero=arrayDinero[a];
+			if(arrayDinero[a]<importeCambio) {
+				dineroEntregado+=arrayDinero[a];
+			}
+			
+			
+				
+		}
+		System.out.println(importeCambio);
+		System.out.println(dineroEntregado);
+	}
+	
+	
 }
 
