@@ -275,23 +275,20 @@ public abstract class Ejemplos {
 	}
 	
 	
-	public static void devolverCambio(double precio,double importePagado) {
-		double importeCambio=importePagado-precio;
-		double dineroEntregado=0;
-		double arrayDinero[]= {500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01};
-		double dinero;
-		double cambioRestante=importeCambio-dineroEntregado;
-		for(int a=0;a<=arrayDinero.length-1;a++) {
-			dinero=arrayDinero[a];
-			if(arrayDinero[a]<importeCambio) {
-				dineroEntregado+=arrayDinero[a];
+	public static void devolverCambio(int precioC,int importePagadoC) {
+		int importeCambio=importePagadoC-precioC;
+		int importeEntregado=0;
+		int arrayDinero[]= {50000,20000,10000,5000,2000,1000,500,200,100,50,20,10,5,2,1};
+		int arrayValor[]=new int[arrayDinero.length]; 
+		for (int i=0; i<arrayDinero.length;i++) {
+			while(importeCambio>=arrayValor[i]) {
+				
+				importeCambio=importeCambio-arrayDinero[i];
+				arrayValor[i]=arrayValor[i]+1;
 			}
 			
-			
-				
 		}
-		System.out.println(importeCambio);
-		System.out.println(dineroEntregado);
+		Ejemplos.imprimirArrayEnteros(arrayValor);
 	}
 	
 	
