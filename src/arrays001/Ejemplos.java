@@ -138,17 +138,16 @@ public abstract class Ejemplos {
 	}
 	
 	public static boolean estaOrdenadoAscendentemente(int array[]) {
-		imprimirTraza("Comprobando si "+arrayEnterosToString(array)+" está ordenado ascendentemente.");
 		boolean estaOrdenado=true;
 		for(int i=0;i<array.length-1;i++) {
-			imprimirTraza("- Comparando array["+i+"] con array["+(i+1)+"]");
+			
 			if(esMayor(array[i],array[i+1])) {
-				imprimirTraza("  - "+array[i]+" es mayor que "+array[i+1]);
+				
 				estaOrdenado=false;
 				break;
 			}
 		}
-		imprimirTraza("El resultado de la comprobación es "+estaOrdenado+".");
+		
 		return estaOrdenado;
 	}
 	
@@ -275,22 +274,55 @@ public abstract class Ejemplos {
 	}
 	
 	
-	public static void devolverCambio(int precioC,int importePagadoC) {
-		int importeCambio=importePagadoC-precioC;
-		int importeEntregado=0;
-		int arrayDinero[]= {50000,20000,10000,5000,2000,1000,500,200,100,50,20,10,5,2,1};
-		int arrayValor[]=new int[arrayDinero.length]; 
-		for (int i=0; i<arrayDinero.length;i++) {
-			while(importeCambio>=arrayValor[i]) {
-				
-				importeCambio=importeCambio-arrayDinero[i];
-				arrayValor[i]=arrayValor[i]+1;
+	public static void devolverCambio(int precioCentimos, int importePagadoCentimos) {
+		int cambioPendiente=importePagadoCentimos-precioCentimos;
+		int[] valores= {50000,20000,10000,5000,2000,1000,500,200,100,50,20,10,5,2,1};
+		int[] numeroMonedas=new int[valores.length];
+		for(int i=0;i<valores.length;i++)
+			while(cambioPendiente>=valores[i]) {
+				cambioPendiente=cambioPendiente-valores[i];
+				numeroMonedas[i]=numeroMonedas[i]+1;
+				imprimirArrayEnteros(valores);
+				imprimirArrayEnteros(numeroMonedas);
+				System.out.println(cambioPendiente);
 			}
-			
-		}
-		Ejemplos.imprimirArrayEnteros(arrayValor);
 	}
 	
+	public static String imprimirArrayStrings(String array[]) {
+				
+		String cadena="{";
+		for(int i=0;i<array.length;i++) {
+			cadena+=array[i];
+			if (i<array.length-1)
+				cadena+=",";
+			
+		}
+		cadena+="}";
+		return cadena;
+	}  
+	
+	public static void ordenarPorEdad(String[] nombres, int[] edades) {
+		imprimirArrayEnteros(edades);
+		imprimirArrayStrings(nombres);
+		while(!estaOrdenadoAscendentemente(edades)) {
+		for(int i=0; i<edades.length-1;i++) {
+			
+			if(edades[i]>edades[i+1]) {
+					int aux=edades[i+1];
+					edades[i+1]=edades[i];
+					edades[i]=aux;
+					i=0;
+				}
+			}
+		}
+			
+		
+		
+		// ordenar
+		imprimirArrayEnteros(edades);
+		imprimirArrayStrings(nombres);
+	}
+
 	
 }
 
